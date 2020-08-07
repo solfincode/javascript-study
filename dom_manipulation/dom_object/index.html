@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link
+			href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="content px-12 py-12">
+			<h1 class="text-2xl">DOM Manipulation</h1>
+			<p>Document Object Model</p>
+			<form class="w-full max-w-sm">
+				<div class="flex items-center border-b border-teal-500 py-2">
+					<input
+						class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+						type="text"
+						placeholder="Jane Doe"
+						aria-label="Full name"
+					/>
+					<button
+						class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+						type="button"
+					>
+						Add
+					</button>
+				</div>
+			</form>
+		</div>
+		<script src="app.js"></script>
+	</body>
+</html>
