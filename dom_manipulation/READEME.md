@@ -5,3 +5,5 @@
 5.event listner
 6.mouse event
 7.keyboard event
+8.event bubbling and delegation
+9.local session storage

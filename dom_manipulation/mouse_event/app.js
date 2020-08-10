@@ -1,5 +1,14 @@
 /********************************
 mouse event
+click
+dbclick
+mousedown
+mouseup
+mouseenter
+mouseleave
+mouseover
+mouseout
+mousemove 
 *********************************/
 const clearBtn = document.querySelector(".clear");
 const heading = document.getElementById("task-title");
@@ -7,7 +16,7 @@ const heading = document.getElementById("task-title");
 //mouse Event
 clearBtn.addEventListener("click", runEvent);
 clearBtn.addEventListener("dbclick", runEvent);
-clearBtn.addEventListener("mousedownk", runEvent);
+clearBtn.addEventListener("mousedown", runEvent);
 clearBtn.addEventListener("mouseup", runEvent);
 clearBtn.addEventListener("mouseenter", runEvent);
 clearBtn.addEventListener("mouseleave", runEvent);
