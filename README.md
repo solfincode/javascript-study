@@ -7,3 +7,4 @@ This is vanilla javascript study
 - in this folder, i studied basic syntax of vanilla javascript such as variable and data type etc
 
 2. DOM Manipulation
+3. DOM project

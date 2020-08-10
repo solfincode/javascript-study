@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="card-content content px-12 py-12">
+			<h1 class="text-2xl font-bold">Task Lists</h1>
+			<div class="max-w-sm rounded overflow-hidden shadow-lg">
+				<form class="w-full max-w-sm" id="form">
+					<div class="flex items-center border-b border-teal-500 py-2">
+						<input
+							class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+							type="text"
+							placeholder="type your task"
+							id="task"
+						/>
+						<button
+							class="addBtn flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+							type="submit"
+							id="addBtn"
+						>
+							Add
+						</button>
+					</div>
+				</form>
+			</div>
+			<div class="card-action mt-8">
+				<h5 id="task-title">Tasks</h5>
+				<input
+					class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+					type="text"
+					placeholder="filter task"
+					id="filter"
+				/>
+				<label for="filter">filter tasks</label>
+				<ul class="collection"></ul>
+				<button
+					class="clear-tasks flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+					type="button"
+				>
+					clear
+				</button>
+			</div>
+		</div>
+
+		<script src="app.js"></script>
+	</body>
+</html>
