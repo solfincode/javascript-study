@@ -105,7 +105,6 @@ function removeTaskFromLocalStorage(taskItem) {
 			tasks.splice(index, 1);
 		}
 	});
-	console.log(taskItem.firstChild.data);
 	localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
