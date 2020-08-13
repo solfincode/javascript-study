@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="bg-orange-300">
+		<div class="container px-4 py-4 m-auto">
+			<div
+				class="max-w-sm rounded overflow-hidden shadow-lg bg-gray-100 m-auto mt-20 p-10"
+			>
+				<h1 class="text-2xl">Number guesser</h1>
+				<div id="game">
+					<h3>
+						guess number between <span class="min-num">1</span> and
+						<span class="max-num">10</span>
+					</h3>
+					<input
+						class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 mt-4"
+						id="guess-input"
+						type="text"
+						placeholder="guess number"
+					/>
+					<div class="message"></div>
+					<button
+						id="guess-btn"
+						class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10"
+					>
+						submit
+					</button>
+				</div>
+			</div>
+		</div>
+		<script src="app.js"></script>
+	</body>
+</html>
