@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<style>
+			.success,
+			.error {
+				color: white;
+				padding: 5px;
+				margin: 5px 0px 15px 0;
+			}
+			.success {
+				background: green;
+			}
+			.error {
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container w-2/3 m-auto px-4 py-4">
+			<h1 class="text-2xl">Add Book</h1>
+			<form action="" id="book-form">
+				<!-- book title -->
+				<label for="title">book title</label>
+				<input
+					type="text"
+					name="book-title"
+					id="title"
+					class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+				/>
+				<!-- author -->
+				<label for="author">Author</label>
+				<input
+					type="text"
+					name="author"
+					id="author"
+					class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+				/>
+				<!-- isbn -->
+				<label for="isbn">#ISBN</label>
+				<input
+					type="text"
+					name="isbn"
+					id="isbn"
+					class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+				/>
+				<button
+					class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+				>
+					submit
+				</button>
+			</form>
+			<table class="w-full mt-10">
+				<thead>
+					<tr>
+						<th
+							class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 lg:table-cell"
+						>
+							Title
+						</th>
+						<th
+							class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 lg:table-cell"
+						>
+							Author
+						</th>
+						<th
+							class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 lg:table-cell"
+						>
+							ISBN
+						</th>
+						<th
+							class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 lg:table-cell"
+						>
+							remove
+						</th>
+					</tr>
+				</thead>
+				<tbody id="book-list"></tbody>
+			</table>
+		</div>
+		<!-- <script src="app.js"></script> -->
+		<script src="appes6.js"></script>
+	</body>
+</html>
