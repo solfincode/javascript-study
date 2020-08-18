@@ -27,7 +27,6 @@ function loadData() {
 	};
 	xhr.onload = function () {
 		if (this.status === 200) {
-			// console.log(this.responseText);
 			document.getElementById(
 				"output"
 			).innerHTML = `<h1>${this.responseText}</h1>`;

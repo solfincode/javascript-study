@@ -9,7 +9,6 @@ class Book {
 class UI {
 	addBookList(book) {
 		const list = document.getElementById("book-list");
-
 		// create tr element
 		const row = document.createElement("tr");
 		//insert cols
