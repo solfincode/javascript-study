@@ -35,7 +35,7 @@ function getJson() {
 			console.log(err);
 		});
 }
-get api
+//get api
 function getApi() {
 	fetch("https://api.github.com/users")
 		.then(function (res) {
@@ -53,4 +53,3 @@ function getApi() {
 			console.log(err);
 		});
 }
-
