@@ -6,3 +6,5 @@
 6.fetch api
 7.arrow function
 8.custom_fetch_promise(custom http library - fetch with promises)
+9.Async and await
+10.custom async await
