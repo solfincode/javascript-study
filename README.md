@@ -8,3 +8,4 @@ This is vanilla javascript study
 4. OOP javascript
 5. OOP js project book - book list form
 6. Async javascript
+7. API project
