@@ -1,15 +1,15 @@
 let re;
 re = /hello/;
-rei = /hello/i; // i = case sensitive
-reg = /hello/g; //global search
+let rei = /hello/i; // i = case sensitive
+let reg = /hello/g; //global search
 //check console of re
 // console.log(re);
 // console.log(re.source);
 
 const result = re.exec("hello world");
-console.log(result[0]);
-console.log(result.index);
-console.log(result.input);
+console.log("result[0]:", result[0]);
+console.log("result.index:", result.index);
+console.log("result.input:", result.input);
 
 // test() - return true or false
 const res1 = reg.test("hello");
