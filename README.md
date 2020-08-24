@@ -9,3 +9,4 @@ This is vanilla javascript study
 5. OOP js project book - book list form
 6. Async javascript
 7. API project
+8. error handling and regular expression
