@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<style>
+			#feedback {
+				color: #fc8181;
+				font-size: 0.75rem;
+			}
+		</style>
+	</head>
+	<body class="bg-red-400">
+		<div class="w-full max-w-xs m-auto mt-10">
+			<form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+				<!-- name -->
+				<div class="mb-4">
+					<label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+						Name
+					</label>
+					<input
+						class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-3"
+						id="name"
+						type="text"
+						placeholder="name"
+					/>
+					<p id="feed-name" class="hidden">
+						no more than 10 character
+					</p>
+				</div>
+				<!-- zipcode -->
+				<div class="mb-4">
+					<label
+						class="block text-gray-700 text-sm font-bold mb-2"
+						for="zipcode"
+					>
+						zipcode
+					</label>
+					<input
+						class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-3"
+						id="zipcode"
+						type="text"
+						placeholder="zipcode"
+					/>
+					<p id="feed-zip" class="hidden text-red-400 text-xs italic">
+						Please type valid zipcode
+					</p>
+				</div>
+				<!-- email -->
+				<div class="mb-6">
+					<label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+						Email
+					</label>
+					<input
+						class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+						id="email"
+						type="text"
+						placeholder="email"
+					/>
+					<p id="feed-email" class="hidden text-red-400 text-xs italic">
+						Please choose your email.
+					</p>
+				</div>
+				<!-- phone number -->
+				<div class="mb-6">
+					<label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+						phone
+					</label>
+					<input
+						class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+						id="phone"
+						type="text"
+						placeholder="phone"
+					/>
+					<p id="feed-phone" class="hidden text-red-400 text-xs italic">
+						Please choose your phone number.
+					</p>
+				</div>
+				<div class="flex items-center justify-between">
+					<button
+						class="bg-red-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+						type="button"
+					>
+						Sign In
+					</button>
+				</div>
+			</form>
+		</div>
+		<script src="app.js"></script>
+	</body>
+</html>

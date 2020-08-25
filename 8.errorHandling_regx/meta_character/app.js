@@ -27,6 +27,10 @@ const str = "hello world";
 const result = re.exec(str);
 console.log(result);
 
+const str2 = "gray";
+const res2 = reb.exec(str);
+console.log(res2);
+
 function reTest(re, str) {
 	if (re.test(str)) {
 		console.log(`${str} matches ${re.source}`);
