@@ -6,3 +6,4 @@
    - parentheses
    - braces
    - shorthand character
+5. Form validation
