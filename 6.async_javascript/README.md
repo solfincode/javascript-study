@@ -8,3 +8,5 @@
 8.custom_fetch_promise(custom http library - fetch with promises)
 9.Async and await
 10.custom async await
+11.promise
+12.custom async await
