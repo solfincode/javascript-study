@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- Compiled and minified CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-wrapper blue">
+				<div class="container">
+					<a href="#" class="brand-logo center">Calories</a>
+					<ul class="right">
+						<li><a href="#" class="clear-btn btn blue">clear all</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="card">
+				<div class="card-content">
+					<span class="card-title">add meal / food item</span>
+					<form class="col">
+						<div class="row">
+							<div class="input-field col s6">
+								<input type="text" placeholder="add item" id="item-name" />
+								<label for="item-name">meal</label>
+							</div>
+							<div class="input-field col s6">
+								<input
+									type="text"
+									placeholder="add calories"
+									id="item-calories"
+								/>
+								<label for="item-calories">calories</label>
+							</div>
+							<button class="add-btn btn blue darken-3">add meal</button>
+							<!-- <button class="update-btn btn orange">update meal</button>
+							<button class="delete-btn btn red">delete meal</button>
+							<button class="back-btn btn grey pull-right">add meal</button> -->
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- calories total -->
+			<h3 class="center-align">
+				total calories:<span class="total-calories">0</span>
+			</h3>
+			<ul id="item-list" class="collection">
+				<li class="collection-item" id="item-0">
+					<strong>streak:</strong><em>1200 calories</em>
+					<a href="#" class="secondary-content">delete</a>
+				</li>
+			</ul>
+		</div>
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
