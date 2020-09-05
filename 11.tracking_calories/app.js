@@ -11,9 +11,9 @@ const ItemCtrl = (function () {
 	//data structure
 	const data = {
 		items: [
-			{ id: 0, name: "Steak Dinner", calories: 1200 },
-			{ id: 1, name: "cookie", calories: 3200 },
-			{ id: 2, name: "burger", calories: 5200 },
+			// { id: 0, name: "Steak Dinner", calories: 1200 },
+			// { id: 1, name: "cookie", calories: 3200 },
+			// { id: 2, name: "burger", calories: 5200 },
 		],
 		currentItem: null,
 		totalCalories: 0,
@@ -38,6 +38,14 @@ const ItemCtrl = (function () {
 			data.items.push(newItem);
 			return newItem;
 		},
+		getTotalCalories: function () {
+			let total = 0;
+			data.items.forEach(function (item) {
+				total += item.calories;
+			});
+			data.totalCalories = total;
+			return data.totalCalories;
+		},
 		logData: function () {
 			return data;
 		},
@@ -50,6 +58,7 @@ const UICtrl = (function () {
 		addBtn: "#addBtn",
 		itemNameInput: "#item-name",
 		itemCaloriesInput: "#item-calories",
+		totalCalories: ".total-calories",
 	};
 	return {
 		populateItemList: function (items) {
@@ -87,6 +96,11 @@ const UICtrl = (function () {
 		hideList: function () {
 			document.querySelector(UISelectors.itemList).style.display = "none";
 		},
+		showTotalCalories: function (totalCalories) {
+			document.querySelector(
+				UISelectors.totalCalories
+			).textContent = totalCalories;
+		},
 		getSelectors: function () {
 			return UISelectors;
 		},
@@ -110,6 +124,10 @@ const App = (function (ItemCtrl, UICtrl) {
 		if (input.name !== "" && input.calories !== "") {
 			const newItem = ItemCtrl.addItem(input.name, input.calories);
 			UICtrl.addListItem(newItem);
+			//get total calories
+			const totalCalories = ItemCtrl.getTotalCalories();
+			//add total calories to ui
+			UICtrl.showTotalCalories(totalCalories);
 			//clear field
 			UICtrl.clearInput();
 		}
@@ -127,6 +145,9 @@ const App = (function (ItemCtrl, UICtrl) {
 			} else {
 				UICtrl.populateItemList(items);
 			}
+			const totalCalories = ItemCtrl.getTotalCalories();
+			//add total calories to ui
+			UICtrl.showTotalCalories(totalCalories);
 			//load event listener
 			loadEventListeners();
 		},
