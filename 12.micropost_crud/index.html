@@ -11,10 +11,63 @@
 		<title></title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="" />
+		<link
+			href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<h1>javascript webpack app</h1>
+		<nav class="flex items-center justify-between flex-wrap bg-blue-500 p-4">
+			<div class="flex items-center flex-shrink-0 text-white mr-6">
+				<span class="font-semibold text-xl tracking-tight">MicroPost</span>
+			</div>
+			<div class="block lg:hidden">
+				<button
+					class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+				>
+					<svg
+						class="fill-current h-3 w-3"
+						viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<title>Menu</title>
+						<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+					</svg>
+				</button>
+			</div>
+		</nav>
+		<div class="container postsContainer max-w-md m-auto ">
+			<div class="card max-w-sm rounded overflow-hidden shadow-lg p-10 mt-6">
+				<h1 class="text-2xl font-bold">Say something</h1>
+				<p>what is on your mind?</p>
+				<div class="w-full max-w-xs">
+					<form>
+						<div class="mt-4">
+							<input
+								class="mb-6 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								id="title"
+								type="text"
+								placeholder="Title"
+							/>
+							<textarea
+								id="body"
+								class="shadow appearance-none border rounded
+							w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none
+							focus:shadow-outline"
+							></textarea>
+						</div>
+					</form>
+				</div>
+				<input type="hidden" id="id" value="" />
+				<button
+					id="post-submit"
+					class="mt-6 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+				>
+					Post it
+				</button>
+			</div>
+			<div id="posts"></div>
+		</div>
 
 		<script src="./build/app.bundle.js"></script>
 	</body>

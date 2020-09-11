@@ -94,7 +94,19 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mymodule2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mymodule2 */ \"./src/mymodule2.js\");\n//commonJS module\nconst person = __webpack_require__(/*! ./mymodule */ \"./src/mymodule.js\"); //es2015 module\n// import { person2, sayHello } from \"./mymodule2\";\n\n\n\nconsole.log(\"CommonJs\", person.name);\nconsole.log(\"es2015\", _mymodule2__WEBPACK_IMPORTED_MODULE_0__[\"person2\"].name);\nconsole.log(_mymodule2__WEBPACK_IMPORTED_MODULE_0__[\"sayHello\"]());\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mymodule2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mymodule2 */ \"./src/mymodule2.js\");\n/* harmony import */ var _http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./http */ \"./src/http.js\");\n/* harmony import */ var _ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ui */ \"./src/ui.js\");\n//commonJS module\nconst person = __webpack_require__(/*! ./mymodule */ \"./src/mymodule.js\"); //es2015 module\n// import { person2, sayHello } from \"./mymodule2\";\n\n\n\nconsole.log(\"CommonJs\", person.name);\nconsole.log(\"es2015\", _mymodule2__WEBPACK_IMPORTED_MODULE_0__[\"person2\"].name);\nconsole.log(_mymodule2__WEBPACK_IMPORTED_MODULE_0__[\"sayHello\"]());\n\n //get posts\n\ndocument.addEventListener(\"DOMContentLoaded\", getPosts);\n\nfunction getPosts() {\n  _http__WEBPACK_IMPORTED_MODULE_1__[\"http\"].get(\"http://localhost:3000/posts\").then(data => _ui__WEBPACK_IMPORTED_MODULE_2__[\"ui\"].showPosts(data)).catch(err => console.log(err));\n}\n\n//# sourceURL=webpack:///./src/app.js?");
+
+/***/ }),
+
+/***/ "./src/http.js":
+/*!*********************!*\
+  !*** ./src/http.js ***!
+  \*********************/
+/*! exports provided: http */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"http\", function() { return http; });\nclass HttpModule {\n  async get(url) {\n    const response = await fetch(url);\n    const resData = await response.json();\n    return resData;\n  }\n\n  async post(url, data) {\n    const response = await fetch(url, {\n      method: \"POST\",\n      headers: {\n        \"Content-type\": \"application/json\"\n      },\n      body: JSON.stringify(data)\n    });\n    const resData = await response.json();\n    return resData;\n  }\n\n  async put(url, data) {\n    const response = await fetch(url, {\n      method: \"PUT\",\n      headers: {\n        \"Content-type\": \"application/json\"\n      },\n      body: JSON.stringify(data)\n    });\n    const resData = await response.json();\n    return resData;\n  }\n\n  async delete(url) {\n    const response = await fetch(url, {\n      method: \"DELETE\",\n      headers: {\n        \"Content-type\": \"application/json\"\n      }\n    });\n    const resData = await \"data is deleted\";\n    return resData;\n  }\n\n}\n\nconst http = new HttpModule();\n\n//# sourceURL=webpack:///./src/http.js?");
 
 /***/ }),
 
@@ -118,6 +130,18 @@ eval("module.exports = {\n  name: \"Brive\",\n  email: \"abcd@gmail.com\"\n};\n\
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"person2\", function() { return person2; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sayHello\", function() { return sayHello; });\nconst person2 = {\n  name: \"john\",\n  age: 30\n};\nfunction sayHello() {\n  return `hello ${person2.name}`;\n} // const greeting = \"hello world\";\n// export default greeting;\n\n//# sourceURL=webpack:///./src/mymodule2.js?");
+
+/***/ }),
+
+/***/ "./src/ui.js":
+/*!*******************!*\
+  !*** ./src/ui.js ***!
+  \*******************/
+/*! exports provided: ui */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ui\", function() { return ui; });\nclass UI {\n  constructor() {\n    this.post = document.querySelector(\"#posts\");\n    this.titleInput = document.querySelector(\"#title\");\n    this.bodyInput = document.querySelector(\"#body\");\n    this.idInput = document.querySelector(\"#id\");\n    this.postSubmit = document.querySelector(\"#post-submit\");\n    this.forState = \"add\";\n  }\n\n  showPosts(posts) {\n    let output = \"\";\n    posts.forEach(post => {\n      output += `\n                <div class=\"mb-4 max-w-sm rounded overflow-hidden shadow-lg p-10 mt-6\">\n                    <h3>${post.title}</h3>\n                    <p>${post.body}</p>\n                    <a href=\"#\" class=\"edit text-red-700\" data-id=\"${post.id}\">edit</a>\n                    <a href=\"#\" class=\"delete text-blue-500\" data-id=\"${post.id}\">delete</a>\n                </div>\n            `;\n    });\n    this.post.innerHTML = output;\n  }\n\n}\n\nconst ui = new UI();\n\n//# sourceURL=webpack:///./src/ui.js?");
 
 /***/ })
 
