@@ -1,6 +1,6 @@
 /**********************
 storage Controller
- ***********************/
+***********************/
 const StorageCtrl = (function () {
 	return {
 		storeItem: function (item) {
