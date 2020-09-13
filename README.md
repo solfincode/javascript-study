@@ -10,3 +10,7 @@ This is vanilla javascript study
 6. Async javascript
 7. API project
 8. error handling and regular expression
+9. ES6 feature
+10. javascript pattern
+11. tracking calories
+12. micropost using CRUD and json fake server

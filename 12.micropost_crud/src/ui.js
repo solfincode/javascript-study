@@ -5,7 +5,7 @@ class UI {
 		this.bodyInput = document.querySelector("#body");
 		this.idInput = document.querySelector("#id");
 		this.postSubmit = document.querySelector("#post-submit");
-		this.forState = "add";
+		this.formState = "add";
 	}
 	showPosts(posts) {
 		let output = "";
@@ -20,6 +20,67 @@ class UI {
             `;
 		});
 		this.post.innerHTML = output;
+	}
+	showAlert(message, className) {
+		this.clearAlert();
+		const div = document.createElement("div");
+		div.classList = className;
+		div.appendChild(document.createTextNode(message));
+		const container = document.querySelector("#postsContainer");
+		const posts = document.querySelector("#posts");
+		container.insertBefore(div, posts);
+		setTimeout(() => {
+			this.clearAlert();
+		}, 2000);
+	}
+	clearAlert() {
+		const currentAlert = document.querySelector(".bg-red-100");
+		if (currentAlert) {
+			currentAlert.remove();
+		}
+	}
+	clearField() {
+		this.titleInput.value = "";
+		this.bodyInput.value = "";
+	}
+	fillForm(data) {
+		this.titleInput.value = data.title;
+		this.bodyInput.value = data.body;
+		this.idInput.value = data.id;
+		this.changeFormState("edit");
+	}
+	clearIdInput() {
+		this.idInput.value = "";
+	}
+
+	//change form state
+	changeFormState(type) {
+		if (type === "edit") {
+			this.postSubmit.textContent = "update";
+			this.postSubmit.className =
+				"bg-orange-500 mt-6 w-full text-white font-bold py-2 px-4 rounded";
+			//create cancel button element
+			const button = document.createElement("button");
+			button.className =
+				"cancel bg-gray-600 mt-6 w-full text-white font-bold py-2 px-4 rounded";
+			button.appendChild(document.createTextNode("cancel"));
+			//get parent node
+			const card = document.querySelector(".card");
+			const formEnd = document.querySelector(".form-end");
+			card.insertBefore(button, formEnd);
+		} else {
+			this.postSubmit.textContent = "post it";
+			this.postSubmit.className =
+				"mt-6 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded";
+			//remove cancel button
+			if (document.querySelector(".cancel")) {
+				document.querySelector(".cancel").remove();
+			}
+			//clear ID
+			this.clearIdInput();
+			//clear text field
+			this.clearField();
+		}
 	}
 }
 
